@@ -1,0 +1,31 @@
+.Home {
+    background-color: rgb(245, 247, 249);
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto 15px;
+    margin-top: 10px;
+}
+.divPizzas {
+    width: 75%;
+}
+.PizzasTitre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: gray;
+    font-size: 14px;
+    letter-spacing: 1px;
+    height: 50px;
+}
+.PizzasTitre > div {
+    flex-grow: 1;
+    border: 1px solid lightgray;
+}
+.divPanier {
+    width: 20%;
+    padding-left: 30px;
+    box-sizing: content-box;
+    
+}

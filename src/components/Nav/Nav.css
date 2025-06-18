@@ -6,13 +6,17 @@ nav {
     align-items: center;
     height: 56px;
     box-shadow: -3px 4px 17.5px rgba(35, 31, 32, .5019607843);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 nav > div {
-    width: 80%;
+    width: 1180px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 nav > div > ul {
     display: flex;

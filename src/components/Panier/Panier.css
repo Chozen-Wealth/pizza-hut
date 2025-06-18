@@ -1,0 +1,67 @@
+.Panier {
+    width: 25%;
+    padding-left: 30px;
+    box-sizing: content-box;
+    margin-top: 15px;
+}
+.PanierAchat {
+    background-color: white;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0 2px 5px rgba(35, 31, 32, .05);
+}
+.PanierAchat > h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+    font-weight: bolder;
+}
+.PanierTotal {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background-color: #f5f7f9;
+}
+.btnAdresse {
+    font-size: 12px;
+    color: #6b6e79;
+    cursor: pointer;
+    padding: 15px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+}
+.btnAdresse:hover {
+    text-decoration: underline;
+}
+.PanierVide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #6b6e79;
+    min-height: 15vh;
+}
+.btnCommander {
+    background-color: #c6db99;
+    border: none;
+    margin-top: 15px;
+    width: 100%;
+    font-size: 18px;
+    height: 56px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding-inline: 15px;
+    color: white;
+}
+.btnCommander > div:first-of-type {
+    background-color: rgba(99, 144, 3, .3);
+    padding: 5px 10px;
+    padding-top: 6px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
