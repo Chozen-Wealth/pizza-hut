@@ -1,6 +1,7 @@
 import Panier from "../../components/Panier/Panier"
 import "./Home.css"
-
+import data from "../../../catalogue.json"
+import Card from "../../components/Card/Card"
 
 
 export default function Home(){
@@ -16,7 +17,9 @@ export default function Home(){
                     <div></div>
                 </div>
                 <div className="Pizzas">
-
+                    {data.map(element => (
+                        <Card pizza={element} />
+                    ))}
                 </div>
 
             </div>
