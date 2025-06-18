@@ -1,0 +1,82 @@
+nav {
+    background-color: rgb(200, 16, 46);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    box-shadow: -3px 4px 17.5px rgba(35, 31, 32, .5019607843);
+}
+nav > div {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+nav > div > ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 48px;
+}
+nav > div > ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+nav > div > ul li:hover {
+    color: #dfdfe3;
+    cursor: pointer;
+}
+nav > div ul li.active {
+    border-bottom: 3px solid #fff;
+}
+nav > div > div:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+nav > div > div:last-of-type button {
+    border: 1px dashed white;
+    background-color: transparent;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+nav > div > div:last-of-type span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    /* font-weight: 600; */
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+nav > div > div:last-of-type span svg {
+    height: 30px;
+    width: 30px;
+    margin-left: -3px;
+}
+nav > div > div:last-of-type span span:last-of-type {
+    position: absolute;
+    bottom: -35px;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 7px 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+nav > div > div:first-of-type {
+    cursor: pointer;
+}
+nav > div > div:first-of-type img{
+    height: 30px;
+}
