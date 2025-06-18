@@ -13,13 +13,13 @@ export default function Panier() {
                     <div style={{flexGrow: "1",}}>Total</div>
                     <div>€ 0,00</div>
                 </div>
+            </div>
                 <button className='btnCommander'>
                     <div style={{flexGrow: "0"}}>0</div>
                     <div style={{flexGrow: "1"}}>Commander</div>
                     <div style={{flexGrow: "0"}}>€0,00</div>
                 </button>
 
-            </div>
         </div>
     )
 }
