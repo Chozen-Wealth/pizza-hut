@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom'
 import './Card.css'
 
 export default function Card({pizza}) {
+
+    const navigate = useNavigate()
+
     return(
-        <div className='Card'>
+        <div onClick={()=> navigate(`/details/${pizza.name.toLowerCase().replace(" ", "-")}`)} className='Card'>
             <div className='CardDivImage'>
                 <img src={pizza.image} alt="" />
             </div>
