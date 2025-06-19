@@ -65,3 +65,35 @@
     justify-content: center;
     align-items: center;
 }
+.infosCommander {
+    padding-inline: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px 0 rgba(35, 31, 32, .05);
+    border-radius: 4px;
+}
+.infosCommander > div img {
+    height: 40px;
+    width: 40px;
+    margin-right: 5px;
+}
+.infosCommander > div {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+.infosCommander > div h4 {
+    margin: 0;
+}
+.infosCommander p {
+    margin: 0;
+    letter-spacing: 1px;
+    color: #b5b6bd;
+    font-size: 15px;
+    width: 99%;
+    margin: 0 0 10px;
+    line-height: 20px;
+}

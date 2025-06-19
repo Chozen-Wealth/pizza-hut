@@ -1,0 +1,27 @@
+.Details {
+    background-color: rgb(245, 247, 249);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    max-width: 1200px;
+    margin: 0 auto 15px;
+    margin-top: 10px;
+}
+.retour {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 14px;
+    cursor: pointer;
+}
+.retour svg {
+    height: 18px;
+    width: 18px;
+    fill: gray;
+}
+.DetailsGeneral {
+    display: flex;
+}
+.DetailsPizza {
+    width: 75%;
+}
