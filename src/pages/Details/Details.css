@@ -6,6 +6,7 @@
     max-width: 1200px;
     margin: 0 auto 15px;
     margin-top: 10px;
+    padding-bottom: 50px;
 }
 .retour {
     display: flex;
@@ -13,6 +14,10 @@
     color: gray;
     font-size: 14px;
     cursor: pointer;
+    height: 50px;
+}
+.retour:hover {
+    text-decoration: underline;
 }
 .retour svg {
     height: 18px;
@@ -21,7 +26,88 @@
 }
 .DetailsGeneral {
     display: flex;
+
 }
 .DetailsPizza {
     width: 75%;
+    display: flex;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 8px;
+    height: calc(100vh - 160px);
+}
+.DetailsDivImage {
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+.DetailsDivImage img {
+    height: 100%;
+}
+.DetailsDivInfos {
+    width: 50%;
+    padding: 15px;
+}
+.divIngredients {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ingredient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ingredient > div:first-of-type {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+.ingredient > span {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+.ingredient > div:last-of-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.ingredient > div:last-of-type > span:first-of-type {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: rgb(195, 195, 195);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+.ingredient > div:last-of-type > span:last-of-type {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: rgb(112, 164, 1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    padding-top: 1px;
+    cursor: pointer;
+}
+.divIngredientsSupp {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
 }

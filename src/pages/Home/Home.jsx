@@ -18,7 +18,7 @@ export default function Home(){
                 </div>
                 <div className="Pizzas">
                     {data.map(element => (
-                        <Card pizza={element} />
+                        <Card key={element.name} pizza={element} />
                     ))}
                 </div>
 

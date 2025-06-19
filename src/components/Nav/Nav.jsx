@@ -18,7 +18,7 @@ export default function Nav() {
                 <ul>
                     <li>Menus</li>
                     <li>Entrées</li>
-                    <li className='active'>Pizza</li>
+                    <li onClick={()=> navigate("/")} className='active'>Pizza</li>
                     <li>Spécialités</li>
                     <li>Boissons</li>
                     <li>Desserts</li>

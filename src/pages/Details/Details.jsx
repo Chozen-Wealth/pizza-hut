@@ -1,12 +1,17 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import "./Details.css"
 import Panier from "../../components/Panier/Panier"
+import data from "../../../catalogue.json"
 
 
 
 export default function Details(){
 
     const navigate = useNavigate()
+
+    const {name} = useParams()
+
+    const pizza = data.find(element => element.name.toLowerCase().replace(" ", "-") === name )
 
     return(
         <section className="Details">
@@ -16,7 +21,32 @@ export default function Details(){
             </span>
             <div className="DetailsGeneral">
                 <div className="DetailsPizza">
+                    <div className="DetailsDivImage">
+                        <img src={pizza.image} alt="" />
+                    </div>
+                    <div className="DetailsDivInfos">
+                        <h3 style={{margin: "0px"}}>{pizza.name}</h3>
+                        <p style={{fontSize: "12px", color: "gray"}}>{pizza.description}</p>
+                        <div className="divIngredients">
+                            <h4 style={{margin: "0px", marginBottom: "10px"}}>Ingrédients</h4>
+                            {pizza.ingredients.map(element => (
+                                <div className="ingredient">
+                                    <div></div>
+                                    {/* <img src={element.icon} alt="I" /> */}
+                                    <span>{element.name}</span>
+                                    <div>
+                                        <span>-</span>
+                                        <span>1</span>
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="divIngredientsSupp">
+                            <h4 style={{margin: "0px"}}>Ingrédients supplémentaire</h4>
 
+                        </div>
+                    </div>
                 </div>
                 <Panier/>
             </div>
