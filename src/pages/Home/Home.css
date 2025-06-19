@@ -30,7 +30,7 @@
     
 }
 .Pizzas {
-    display: grid;
-    grid-template-columns: repeat(3, calc(33.333% - (30px * 2 / 3)));
-    grid-template-rows: repeat(auto-fit, 283px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }

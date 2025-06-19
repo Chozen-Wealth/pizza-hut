@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Coiny&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Forum&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@300&family=Lexend:wght@518&family=Metal+Mania&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@215&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Tenor+Sans&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.Card {
+    width: calc(33.333% - (30px * 2 / 3));
+    height: 283px;
+    /* float: left; */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px rgba(0,0,0, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+.Card:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0, 0.2);
+}
+.CardDivImage {
+    position: relative;
+    z-index: 0;
+}
+.CardDivImage img{
+    width: 100%;
+    object-fit: cover;
+}
+.CardInfos{
+    /* height: 80px; */
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    transition: all 0.5s;
+    padding: 10px;
+    padding-left: 5px;
+}
+.CardInfos h5 {
+   margin: 0;
+   font-family: montserrat;
+}
+.Card:hover .CardInfos p {
+    max-height: 100px;
+}
+.CardInfos p{
+    max-height: 0px;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    margin-top: 5px;
+    transform-origin: bottom;
+    font-size: 13px;
+    color: #b5b6bd;
+    transition: max-height 0.5s ease-in-out;
+    position: relative;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+.CardInfosBot{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.CardInfosBot button{
+    background-color: rgb(200, 16, 46);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 8px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.CardInfosBot button:hover{
+    background-color: rgb(190, 167, 99);
+}
+.CardPrice span{
+    font-weight: bold;
+}
+.CardPrice div{
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(107, 110, 121);
+}
+.CardPrice{
+    gap: 7px;
+    display: flex;
+    align-items: center;
+}
