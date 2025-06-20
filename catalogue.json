@@ -6,10 +6,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20250616171057220.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20250512134948432.png",
     "ingredients": [
-      { "name": "Poulet Kebab", "icon": "kipkebab", "price": 2.2 },
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Jalapenos", "icon": "jalapeno", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Poulet Kebab", "icon": "kipkebab", "price": 2.2, "quantity": 1},
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Jalapenos", "icon": "jalapeno", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -18,7 +18,7 @@
     "price": 14.0,
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142859220.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163450743.jpg",
-    "ingredients": [{ "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }]
+    "ingredients": [{ "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }]
   },
   {
     "name": "Falafel",
@@ -27,9 +27,9 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20221206171002270.png",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20230310155103630.png",
     "ingredients": [
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Fromage vegan Violife", "icon": "violife", "price": 2.2 },
-      { "name": "Falafel Ball", "icon": "falbal", "price": 2.2 }
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage vegan Violife", "icon": "violife", "price": 2.2, "quantity": 1 },
+      { "name": "Falafel Ball", "icon": "falbal", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -39,9 +39,9 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142929671.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163536901.jpg",
     "ingredients": [
-      { "name": "Pepperoni", "icon": "pepperoni", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 }
+      { "name": "Pepperoni", "icon": "pepperoni", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -51,11 +51,11 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142657745.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163156337.jpg",
     "ingredients": [
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Poivron vert", "icon": "grepap", "price": 2.2 },
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Poivron vert", "icon": "grepap", "price": 2.2, "quantity": 1 },
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -65,10 +65,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142625749.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163123958.jpg",
     "ingredients": [
-      { "name": "Jambon", "icon": "ham", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Jambon", "icon": "ham", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -78,10 +78,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142748528.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163251534.jpg",
     "ingredients": [
-      { "name": "Ananas", "icon": "ananas", "price": 2.2 },
-      { "name": "Jambon", "icon": "ham", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Ananas", "icon": "ananas", "price": 2.2, "quantity": 1 },
+      { "name": "Jambon", "icon": "ham", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -91,8 +91,8 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142527917.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163026887.jpg",
     "ingredients": [
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 },
-      { "name": "Jambon", "icon": "ham", "price": 2.2 }
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 },
+      { "name": "Jambon", "icon": "ham", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -102,11 +102,11 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142809045.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163326415.jpg",
     "ingredients": [
-      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2 },
-      { "name": "Piments verts", "icon": "chili", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2, "quantity": 1 },
+      { "name": "Piments verts", "icon": "chili", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -116,11 +116,11 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142428486.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406162902485.jpg",
     "ingredients": [
-      { "name": "Poulet grillé", "icon": "charchick", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Poivron vert", "icon": "grepap", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Poulet grillé", "icon": "charchick", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Poivron vert", "icon": "grepap", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -130,10 +130,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142359836.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406162828439.jpg",
     "ingredients": [
-      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2 },
-      { "name": "Bacon fumé", "icon": "bacon", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2, "quantity": 1 },
+      { "name": "Bacon fumé", "icon": "bacon", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -143,11 +143,11 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142218215.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406162803685.jpg",
     "ingredients": [
-      { "name": "Lardons fumés", "icon": "baconju", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Sauce a l'ail", "icon": "garlicsc", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Lardons fumés", "icon": "baconju", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Sauce a l'ail", "icon": "garlicsc", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -157,12 +157,12 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712143020016.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163730364.jpg",
     "ingredients": [
-      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2 },
-      { "name": "Pepperoni", "icon": "pepperoni", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Poivron vert", "icon": "grepap", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2, "quantity": 1 },
+      { "name": "Pepperoni", "icon": "pepperoni", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Poivron vert", "icon": "grepap", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -172,11 +172,11 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142951026.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220712145325983.jpg",
     "ingredients": [
-      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2 },
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Sauce au poivre", "icon": "peppersc", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2, "quantity": 1 },
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Sauce au poivre", "icon": "peppersc", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -186,11 +186,11 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142548523.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163057498.jpg",
     "ingredients": [
-      { "name": "Poulet Kebab", "icon": "kipkebab", "price": 2.2 },
-      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Sauce a l'ail", "icon": "garlicsc", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Poulet Kebab", "icon": "kipkebab", "price": 2.2, "quantity": 1 },
+      { "name": "Dés de tomates", "icon": "tomatoes", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Sauce a l'ail", "icon": "garlicsc", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -200,10 +200,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712143106988.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220504090424606.jpg",
     "ingredients": [
-      { "name": "Ananas", "icon": "ananas", "price": 2.2 },
-      { "name": "Poulet grillé", "icon": "charchick", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 },
-      { "name": "Sauce curry douce", "icon": "currysc", "price": 2.2 }
+      { "name": "Ananas", "icon": "ananas", "price": 2.2, "quantity": 1 },
+      { "name": "Poulet grillé", "icon": "charchick", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 },
+      { "name": "Sauce curry douce", "icon": "currysc", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -212,7 +212,7 @@
     "price": 18.6,
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142829505.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163353600.jpg",
-    "ingredients": [{ "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }]
+    "ingredients": [{ "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }]
   },
   {
     "name": "4 Fromages",
@@ -221,10 +221,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20190528135924852.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20250129162352075.jpg",
     "ingredients": [
-      { "name": "Emmental", "icon": "emmental", "price": 2.2 },
-      { "name": "Fromage de chèvre", "icon": "geit", "price": 2.2 },
-      { "name": "Fourme d'Ambert", "icon": "bleu", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Emmental", "icon": "emmental", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage de chèvre", "icon": "geit", "price": 2.2, "quantity": 1 },
+      { "name": "Fourme d'Ambert", "icon": "bleu", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -234,10 +234,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712142721301.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406163225127.jpg",
     "ingredients": [
-      { "name": "Jambon italien", "icon": "parma", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 },
-      { "name": "Fromage d'abbaye Grimbergen", "icon": "grimbergen", "price": 2.2 }
+      { "name": "Jambon italien", "icon": "parma", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage d'abbaye Grimbergen", "icon": "grimbergen", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -247,15 +247,15 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712143042342.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20240820094140285.jpg",
     "ingredients": [
-      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2 },
-      { "name": "Viande de porc", "icon": "porc", "price": 2.2 },
-      { "name": "Jambon", "icon": "ham", "price": 2.2 },
-      { "name": "Pepperoni", "icon": "pepperoni", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Champignons", "icon": "champ", "price": 2.2 },
-      { "name": "Poivron vert", "icon": "grepap", "price": 2.2 },
-      { "name": "Olives noires", "icon": "olives", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Viande de boeuf épicée", "icon": "beef", "price": 2.2, "quantity": 1 },
+      { "name": "Viande de porc", "icon": "porc", "price": 2.2, "quantity": 1 },
+      { "name": "Jambon", "icon": "ham", "price": 2.2, "quantity": 1 },
+      { "name": "Pepperoni", "icon": "pepperoni", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Champignons", "icon": "champ", "price": 2.2, "quantity": 1 },
+      { "name": "Poivron vert", "icon": "grepap", "price": 2.2, "quantity": 1 },
+      { "name": "Olives noires", "icon": "olives", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   },
   {
@@ -265,10 +265,10 @@
     "detail": "https://cdn-catalog.pizzahut.be/images/be/20220712143133358.jpg",
     "image": "https://cdn-catalog.pizzahut.be/images/be/20220406164029214.jpg",
     "ingredients": [
-      { "name": "Thon", "icon": "tuna", "price": 2.2 },
-      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2 },
-      { "name": "Olives noires", "icon": "olives", "price": 2.2 },
-      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2 }
+      { "name": "Thon", "icon": "tuna", "price": 2.2, "quantity": 1 },
+      { "name": "Oignons Rouge", "icon": "redonion", "price": 2.2, "quantity": 1 },
+      { "name": "Olives noires", "icon": "olives", "price": 2.2, "quantity": 1 },
+      { "name": "Fromage mozzarella", "icon": "moza", "price": 2.2, "quantity": 1 }
     ]
   }
 ]

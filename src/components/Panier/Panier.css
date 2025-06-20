@@ -59,6 +59,16 @@
     padding-inline: 15px;
     color: white;
 }
+.btnCommander.active {
+    background-color: #70a401;
+    cursor: pointer;
+}
+.btnCommander.active:hover {
+    background-color: #4c6f01;
+}
+.btnCommander.active > div:first-of-type {
+    background-color: #639003;
+}
 .btnCommander > div:first-of-type {
     background-color: rgba(99, 144, 3, .3);
     padding: 5px 10px;
@@ -99,4 +109,34 @@
     width: 99%;
     margin: 0 0 10px;
     line-height: 20px;
+}
+.panierArticle {
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.panierArticle > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+.panierArticle > div:last-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+.panierArticle > div:last-of-type > div:last-of-type {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.panierArticle > div:last-of-type > div:last-of-type span {
+    cursor: pointer;
+}
+.panierArticle > div:last-of-type > div:last-of-type span:hover {
+    text-decoration: underline;
+}
+.PanierArticles {
+    padding-bottom: 30px;
 }

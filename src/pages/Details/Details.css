@@ -46,6 +46,9 @@
     width: 50%;
     padding: 15px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 .divIngredients {
     border: 1px solid lightgray;
@@ -144,11 +147,13 @@
 }
 .DetailsDivIngredients {
     overflow-y: scroll;
-    height: 74%;
+    flex-grow: 1;
+    box-sizing: content-box;
 }
 .DetailsBtnCommander {
     padding-top: 15px;
     margin-right: 15px;
+    flex-grow: 0;
 }
 .DetailsBtnCommander button {
     width: 100%;
@@ -199,4 +204,9 @@
     padding-top: 2px;
     height: 26px;
     width: 26px;
+}
+.DetailsDivInfosTop {
+    padding-bottom: 5px;
+    background-color: white;
+    flex-grow: 0;
 }

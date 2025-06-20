@@ -3,21 +3,32 @@ import "./Details.css"
 import Panier from "../../components/Panier/Panier"
 import data from "../../../catalogue.json"
 import allIngredients from "../../../ingredients.json"
-import { useContext, useState } from "react"
-
-
+import { useContext, useEffect, useState } from "react"
+import { ajouterIngredients, setPizzaIngredients, resetIngredients, supprimerIngredients, sansIngredients } from "../../Slices/IngredientsSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { ajouterPanier } from "../../Slices/PanierSlice"
 
 export default function Details(){
 
+
+    const ingredientsPizza = useSelector(state => state.ingredients)
+
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const {name} = useParams()
-
     const pizza = data.find(element => element.name.toLowerCase().replace(" ", "-") === name )
+
     const [close, setClose] = useState(false)
     const [closeSupp, setCloseSupp] = useState(false)
-
     const [ingredientsLength, setIngredientsLength] = useState(3)
+
+    const [prix, setPrix] = useState(pizza.price)
+    
+    useEffect(()=>{
+        dispatch(setPizzaIngredients(pizza.ingredients))
+        return
+    },[pizza])
 
 
     return(
@@ -32,44 +43,54 @@ export default function Details(){
                         <img src={pizza.detail} alt="" />
                     </div>
                     <div className="DetailsDivInfos">
-                        <h3 style={{margin: "0px"}}>{pizza.name}</h3>
-                        <p style={{fontSize: "12px", color: "gray"}}>{pizza.description}</p>
+                        <div className="DetailsDivInfosTop">
+                            <h3 style={{margin: "0px"}}>{pizza.name}</h3>
+                            <p style={{fontSize: "12px", color: "gray"}}>{pizza.description}</p>
+                            {ingredientsPizza.addedIngredients.length > 0 && (
+
+                                <p style={{fontSize: "12px", color: "gray", margin: "0px"}}><span style={{color: "#70a401"}} >Supp:</span> {ingredientsPizza.addedIngredients.map(element => (element.name)).join(", ")}</p>
+                            )}
+                            {ingredientsPizza.deletedIngredients.length > 0 && (
+
+                                <p style={{fontSize: "12px", color: "gray", margin: "0px"}}><span style={{color: "#c8102e"}} >Sans:</span> {ingredientsPizza.deletedIngredients.map(element => (element.name)).join(", ")}</p>
+                            )}
+                        </div>
                         <div className="DetailsDivIngredients">
                             <div className="divAjouts">
                                 <div className={`divIngredients ${close ? "closed" : ""}`}>
                                     <h4 className={`divIngredientsTitre`}>Ingrédients <span onClick={()=> setClose(!close)}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span></h4>
-                                    {pizza.ingredients.map(element => (
+                                    {ingredientsPizza.pizzaIngredients.map(element => (
                                         <div key={element.name} className="ingredient">
                                             <div></div>
                                             {/* <img src={element.icon} alt="I" /> */}
                                             <span>{element.name}</span>
                                             <div>
-                                                <span>-</span>
-                                                <span>1</span>
-                                                <span>+</span>
+                                                <span onClick={()=> dispatch(sansIngredients(element))}>-</span>
+                                                <span>{element.quantity}</span>
+                                                <span onClick={()=> dispatch(ajouterIngredients(element))}>+</span>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div className={`divIngredientsSupp ${closeSupp ? "closed" : ""}`}>
                                     <h4 className={`divIngredientsTitre`}>Ingrédients supplémentaire <span onClick={()=> setCloseSupp(!closeSupp)}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span></h4>
-                                    {allIngredients.slice(0, ingredientsLength).map(element => (
+                                    {allIngredients.filter(element => element.name !== pizza.name).slice(0, ingredientsLength).map(element => (
                                         <div key={element.id} className="ingredient">
                                             <div></div>
                                             <span>{element.name} <span>{element.price_display}</span></span>
                                             <div>
-                                                <span>+</span>
+                                                <span onClick={()=> dispatch(ajouterIngredients(element))} >+</span>
                                             </div>
                                         </div>
                                     ))}
                                     {ingredientsLength === 3 && (
-                                        <span onClick={()=> setIngredientsLength(allIngredients.length)} className="btnShowMore">Show 26 more <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
+                                        <span onClick={()=> setIngredientsLength(allIngredients.length)} className="btnShowMore">Show {allIngredients.length} more <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
                                     )}
                                 </div>
                             </div>
                         </div>
                         <div className="DetailsBtnCommander">
-                            <button>Ajouter au panier €{pizza.price.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</button>
+                            <button onClick={()=> {dispatch(ajouterPanier(pizza));navigate("/")}}>Ajouter au panier €{pizza.price.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</button>
                         </div>
                     </div>
                 </div>
