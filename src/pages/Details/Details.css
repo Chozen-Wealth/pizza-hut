@@ -144,7 +144,7 @@
 }
 .DetailsDivIngredients {
     overflow-y: scroll;
-    height: 400px;
+    height: 74%;
 }
 .DetailsBtnCommander {
     padding-top: 15px;
