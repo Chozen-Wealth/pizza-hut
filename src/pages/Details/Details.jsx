@@ -73,7 +73,7 @@ export default function Details(){
                         </div>
                     </div>
                 </div>
-                <Panier/>
+                <Panier show={false} />
             </div>
         </section>
     )
