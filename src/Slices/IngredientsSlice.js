@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     pizzaIngredients : [],
+    pizzaIngredientsInital : [],
     suppIngredients: [],
     addedIngredients: [],
     deletedIngredients: [],
@@ -13,6 +14,9 @@ export const IngredientsSlice = createSlice({
     name: "ingredients",
     initialState,
     reducers: {
+        setIngredientsInital: (state, action) => {
+            state.pizzaIngredientsInital = action.payload
+        },
         setPizzaIngredients: (state, action) => {
             state.pizzaIngredients = action.payload
         },
@@ -43,26 +47,52 @@ export const IngredientsSlice = createSlice({
                 
             } else {
                 // Ajout d’un ingrédient supplémentaire sans limite
-                state.addedIngredients.push({ ...action.payload, quantity: 1 });
+                const existe = state.addedIngredients.find(ing => ing.name === action.payload.name)
+                state.suppIngredients = state.suppIngredients.filter(element => element.name !== action.payload.name)
+                
+                if (existe) {
+                    existe.quantity += 1
+                }
+                else {
+                    state.addedIngredients.push({ ...action.payload, quantity: 1 });
+                    state.pizzaIngredients.push({...action.payload, quantity: 1})
+                }
             }
         },
         sansIngredients: (state, action) => {
             const index = state.pizzaIngredients.findIndex(el => el.name === action.payload.name);
+            const isInitial = state.pizzaIngredientsInital.find(el => el.name === action.payload.name);
 
             if (index !== -1) {
                 const current = state.pizzaIngredients[index];
+            
+                // Si ce n'était pas un ingrédient initial
+                if (!isInitial) {
+                    // Supprimer de la pizza
+                    state.pizzaIngredients = state.pizzaIngredients.filter(el => el.name !== action.payload.name);
                 
-                if (current == 1) {
-                    state.addedIngredients.filter (element => element.name !== action.payload.name)
+                    // Supprimer des ajouts
+                    state.addedIngredients = state.addedIngredients.filter(el => el.name !== action.payload.name);
+                
+                    // Remettre dans les ingrédients supp si pas déjà présent
+                    if (!state.suppIngredients.find(el => el.name === action.payload.name)) {
+                        state.suppIngredients.push({ ...action.payload });
+                    }
+                
+                    return; // On sort ici, rien à décrémenter
                 }
-                // Si quantité > 0, décrémente
+            
+                // Si ingrédient initial
                 if (current.quantity > 0) {
                     current.quantity -= 1;
                 
-                    // S'il est maintenant à 0, alors on le met dans la liste "sans"
+                    // Supprimer des ajouts s'il y était
+                    state.addedIngredients = state.addedIngredients.filter(el => el.name !== action.payload.name);
+                
+                    // Si quantité est maintenant à 0, on ajoute dans les "sans"
                     if (current.quantity === 0) {
-                        // Ajoute que s’il n'est pas déjà dans la liste
-                        if (!state.deletedIngredients.find(el => el.name === current.name)) {
+                        const alreadyInDeleted = state.deletedIngredients.find(el => el.name === current.name);
+                        if (!alreadyInDeleted) {
                             state.deletedIngredients.push({ ...current });
                         }
                     }
@@ -82,5 +112,5 @@ export const IngredientsSlice = createSlice({
     },
 })
 
-export const {setPizzaIngredients, ajouterIngredients, supprimerIngredients, resetIngredients, sansIngredients , setSuppIngredients} = IngredientsSlice.actions
+export const {setIngredientsInital , setPizzaIngredients, ajouterIngredients, supprimerIngredients, resetIngredients, sansIngredients , setSuppIngredients} = IngredientsSlice.actions
 export default IngredientsSlice.reducer

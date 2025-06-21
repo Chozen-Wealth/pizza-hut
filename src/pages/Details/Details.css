@@ -210,3 +210,7 @@
     background-color: white;
     flex-grow: 0;
 }
+.btnDisabled {
+    opacity: 0.4;
+    cursor: default !important;
+}
