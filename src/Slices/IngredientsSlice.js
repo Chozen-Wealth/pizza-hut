@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     pizzaIngredients : [],
+    suppIngredients: [],
     addedIngredients: [],
     deletedIngredients: [],
 }
@@ -14,6 +15,9 @@ export const IngredientsSlice = createSlice({
     reducers: {
         setPizzaIngredients: (state, action) => {
             state.pizzaIngredients = action.payload
+        },
+        setSuppIngredients: (state, action) => {
+            state.suppIngredients = action.payload
         },
         ajouterIngredients: (state, action) => {
             // const ingredientPresent = state.pizzaIngredients.find(element => element.name === action.payload.name)
@@ -73,9 +77,10 @@ export const IngredientsSlice = createSlice({
         resetIngredients: (state,) => {
             state.pizzaIngredients = []
             state.addedIngredients = []
+            state.suppIngredients = []
         }
     },
 })
 
-export const {setPizzaIngredients, ajouterIngredients, supprimerIngredients, resetIngredients, sansIngredients} = IngredientsSlice.actions
+export const {setPizzaIngredients, ajouterIngredients, supprimerIngredients, resetIngredients, sansIngredients , setSuppIngredients} = IngredientsSlice.actions
 export default IngredientsSlice.reducer

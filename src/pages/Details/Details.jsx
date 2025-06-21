@@ -4,7 +4,7 @@ import Panier from "../../components/Panier/Panier"
 import data from "../../../catalogue.json"
 import allIngredients from "../../../ingredients.json"
 import { useContext, useEffect, useState } from "react"
-import { ajouterIngredients, setPizzaIngredients, resetIngredients, supprimerIngredients, sansIngredients } from "../../Slices/IngredientsSlice"
+import { ajouterIngredients, setPizzaIngredients, resetIngredients, supprimerIngredients, sansIngredients, setSuppIngredients } from "../../Slices/IngredientsSlice"
 import { useDispatch, useSelector } from "react-redux"
 import { ajouterPanier } from "../../Slices/PanierSlice"
 
@@ -24,9 +24,12 @@ export default function Details(){
     const [ingredientsLength, setIngredientsLength] = useState(3)
 
     const [prix, setPrix] = useState(pizza.price)
+
+    const autreIngredients = allIngredients.filter(ingredient => !pizza.ingredients.some(pIngredient => pIngredient.name === ingredient.name))
     
     useEffect(()=>{
         dispatch(setPizzaIngredients(pizza.ingredients))
+        dispatch(setSuppIngredients(allIngredients))
         return
     },[pizza])
 
@@ -74,7 +77,7 @@ export default function Details(){
                                 </div>
                                 <div className={`divIngredientsSupp ${closeSupp ? "closed" : ""}`}>
                                     <h4 className={`divIngredientsTitre`}>Ingrédients supplémentaire <span onClick={()=> setCloseSupp(!closeSupp)}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span></h4>
-                                    {allIngredients.filter(element => element.name !== pizza.name).slice(0, ingredientsLength).map(element => (
+                                    {autreIngredients.slice(0, ingredientsLength).map(element => (
                                         <div key={element.id} className="ingredient">
                                             <div></div>
                                             <span>{element.name} <span>{element.price_display}</span></span>
@@ -84,7 +87,7 @@ export default function Details(){
                                         </div>
                                     ))}
                                     {ingredientsLength === 3 && (
-                                        <span onClick={()=> setIngredientsLength(allIngredients.length)} className="btnShowMore">Show {allIngredients.length} more <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
+                                        <span onClick={()=> setIngredientsLength(autreIngredients.length)} className="btnShowMore">Show {autreIngredients.length} more <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/></svg></span>
                                     )}
                                 </div>
                             </div>
