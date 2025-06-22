@@ -94,7 +94,7 @@ export default function Details(){
                             </div>
                         </div>
                         <div className="DetailsBtnCommander">
-                            <button onClick={()=> {dispatch(ajouterPanier(pizza));navigate("/")}}>Ajouter au panier €{pizza.price.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</button>
+                            <button onClick={()=> {dispatch(ajouterPanier(pizza));navigate("/")}}>Ajouter au panier €{(pizza.price + (ingredientsPizza.addedIngredients.length * 2.2)).toFixed(2).replace(".", ",")}</button>
                         </div>
                     </div>
                 </div>

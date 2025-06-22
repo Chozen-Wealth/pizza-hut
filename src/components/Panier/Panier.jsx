@@ -11,8 +11,10 @@ export default function Panier({show}) {
 
     const panier = useSelector(state => state.panier)
 
+    const ingredientsPizza = useSelector(state => state.ingredients)
+
     const livraison = 1.99
-    const prixTotal = panier.reduce((sum, pizza) => sum + pizza.price, 0)
+    const prixTotal = panier.reduce((sum, pizza) => sum + pizza.price, 0) + (ingredientsPizza.addedIngredients.length * 2.2)
     const prixTotalLivraison = prixTotal+ ( prixTotal + livraison >= 15 ? livraison : 0)
 
     return(
@@ -28,7 +30,7 @@ export default function Panier({show}) {
                             <div className='panierArticle'>
                                 <div>
                                     <span>{element.name}</span>
-                                    <span>€{element.price.toLocaleString("fr-FR", {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                                    <span>€{(element.price + ingredientsPizza.addedIngredients.length * 2.2).toFixed(2).replace(".", ",")}</span>
                                 </div>
                                 <div>
                                     <div>
