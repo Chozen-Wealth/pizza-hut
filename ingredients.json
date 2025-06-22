@@ -2,203 +2,203 @@
   {
     "id": "viande-boeuf-epicee",
     "name": "Viande de boeuf épicée",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "viande-de-porc",
     "name": "Viande de porc",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "lardons-fumes",
     "name": "Lardons fumés",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "ananas",
     "name": "Ananas",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "anchois",
     "name": "Anchois",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "bacon-fume",
     "name": "Bacon fumé",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "champignons",
     "name": "Champignons",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "des-de-tomates",
     "name": "Dés de tomates",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "emmental",
     "name": "Emmental",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "falafel-ball",
     "name": "Falafel Ball",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "fourme-dambert",
     "name": "Fourme d'Ambert",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "fromage-abbaye-grimbergen",
     "name": "Fromage d'abbaye Grimbergen",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "fromage-de-chevre",
     "name": "Fromage de chèvre",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "mozzarella",
     "name": "Fromage mozzarella",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "fromage-vegan-violife",
     "name": "Fromage vegan Violife",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "jalapenos",
     "name": "Jalapenos",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "jambon",
     "name": "Jambon",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "jambon-italien",
     "name": "Jambon italien",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "oignons-rouge",
     "name": "Oignons Rouge",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "olives-noires",
     "name": "Olives noires",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "pepperoni",
     "name": "Pepperoni",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "piments-verts",
     "name": "Piments verts",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "poivron-vert",
     "name": "Poivron vert",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "poulet-grille",
     "name": "Poulet grillé",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "poulet-kebab",
     "name": "Poulet Kebab",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "sauce-ail",
     "name": "Sauce a l'ail",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "sauce-poivre",
     "name": "Sauce au poivre",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "sauce-curry-douce",
     "name": "Sauce curry douce",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   },
   {
     "id": "thon",
     "name": "Thon",
-    "price": 220,
+    "price": 2.20,
     "price_display": "+ €2,20",
     "group_id": "custom_ingredients"
   }

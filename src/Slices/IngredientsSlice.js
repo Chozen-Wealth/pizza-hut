@@ -1,116 +1,269 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
-    pizzaIngredients : [],
-    pizzaIngredientsInital : [],
-    suppIngredients: [],
-    addedIngredients: [],
-    deletedIngredients: [],
-}
-
+  selectedPizza: null,
+  baseIngredients: [],
+  addedIngredients: [],
+  removedIngredients: [],
+  customIngredients: [],
+  allSuppIngredients: [],
+  totalPrice: 0,
+  basePrice: 0,
+  cart: [],
+  editingPizzaIndex: null,
+};
 
 export const IngredientsSlice = createSlice({
-    name: "ingredients",
-    initialState,
-    reducers: {
-        setIngredientsInital: (state, action) => {
-            state.pizzaIngredientsInital = action.payload
-        },
-        setPizzaIngredients: (state, action) => {
-            state.pizzaIngredients = action.payload
-        },
-        setSuppIngredients: (state, action) => {
-            state.suppIngredients = action.payload
-        },
-        ajouterIngredients: (state, action) => {
-            // const ingredientPresent = state.pizzaIngredients.find(element => element.name === action.payload.name)
-            // ingredientPresent ? state.pizzaIngredients = state.pizzaIngredients.map(element => element.name === action.payload.name ? {...element, quantity: element.quantity += 1}: element) : state.addedIngredients.push(action.payload)
-            const index = state.pizzaIngredients.findIndex(element => element.name === action.payload.name);
+  name: "ingredients",
+  initialState,
+  reducers: {
+    selectPizza: (state, action) => {
+      const pizza = action.payload;
 
-            
-            if (index !== -1) {
-                const currentQuantity = state.pizzaIngredients[index].quantity;
-                if (currentQuantity == 1) {
-                    state.addedIngredients.push(action.payload)
-                }
-            
-                // N'autorise pas plus de 2
-                if (currentQuantity < 2) {
-                    state.pizzaIngredients[index].quantity += 1;
-                
-                    // Retire l’ingrédient de la liste "sans" s'il y est
-                    state.deletedIngredients = state.deletedIngredients.filter(
-                        el => el.name !== action.payload.name
-                    );
-                }
-                
+      state.selectedPizza = pizza;
+      state.baseIngredients = pizza.ingredients.map((i) => ({...i, quantity: 1}));
+      state.addedIngredients = [];
+      state.removedIngredients = [];
+      state.customIngredients = [];
+      state.totalPrice = pizza.price;
+      state.basePrice = pizza.price;
+    },
+
+    setSuppIngredients: (state, action) => {
+      state.allSuppIngredients = action.payload;
+    },
+
+    addIngredient: (state, action) => {
+      const ing = action.payload;
+      const isBase = state.selectedPizza.ingredients.some((i) => i.name === ing.name);
+      const existing = state.baseIngredients.find((i) => i.name === ing.name);
+
+      if (ing.quantity >= 2) {
+        return
+      }
+
+      if (existing) {
+        // Ingrédient déjà dans baseIngredients
+        if (existing.quantity === 0 && isBase) {
+          // Cas : remise d'un ingrédient de base retiré → sans supplément
+          existing.quantity = 1;
+          state.removedIngredients = state.removedIngredients.filter((i) => i.name !== ing.name);
+          return;
+        }
+
+        existing.quantity += 1;
+
+        if (isBase) {
+          if (existing.quantity === 2) {
+            // Premier supplément
+            state.totalPrice += Number(ing.price);
+            state.basePrice += Number(ing.price);
+            state.addedIngredients.push({ ...existing, quantity: 1 });
+          } else {
+            state.totalPrice += Number(ing.price);
+            state.basePrice += Number(ing.price);
+            const added = state.addedIngredients.find(
+              (i) => i.name === ing.name
+            );
+            if (added) added.quantity += 1;
+          }
+        } else {
+          // Custom existant
+          state.totalPrice += Number(ing.price);
+          state.basePrice += Number(ing.price);
+
+          const custom = state.customIngredients.find(
+            (i) => i.name === ing.name
+          );
+          if (custom) custom.quantity = existing.quantity;
+
+          const added = state.addedIngredients.find(
+            (i) => i.name === ing.name
+          );
+          if (added) {
+            added.quantity = existing.quantity;
+          } else {
+            state.addedIngredients.push({ ...existing });
+          }
+        }
+      } else {
+        // Nouvel ingrédient custom
+        const newIng = { ...ing, quantity: 1 };
+        state.baseIngredients.push(newIng);
+        state.customIngredients.push({ ...newIng });
+        state.addedIngredients.push({ ...newIng });
+        state.totalPrice += Number(ing.price);
+        state.basePrice += Number(ing.price);
+      }
+    },
+
+    removeIngredient: (state, action) => {
+      const ing = action.payload;
+      const isBase = state.selectedPizza.ingredients.some(
+        (i) => i.name === ing.name
+      );
+      const existing = state.baseIngredients.find((i) => i.name === ing.name);
+
+      if (!existing) return;
+
+      if (existing.quantity > 1) {
+        existing.quantity -= 1;
+
+        if (isBase) {
+          // Supplément d’un ingrédient de base
+          state.totalPrice -= Number(ing.price);
+          state.basePrice -= Number(ing.price);
+
+          const added = state.addedIngredients.find(
+            (i) => i.name === ing.name
+          );
+          if (added) {
+            if (existing.quantity === 1) {
+              // Revenu à quantité normale
+              state.addedIngredients = state.addedIngredients.filter(
+                (i) => i.name !== ing.name
+              );
             } else {
-                // Ajout d’un ingrédient supplémentaire sans limite
-                const existe = state.addedIngredients.find(ing => ing.name === action.payload.name)
-                state.suppIngredients = state.suppIngredients.filter(element => element.name !== action.payload.name)
-                
-                if (existe) {
-                    existe.quantity += 1
-                }
-                else {
-                    state.addedIngredients.push({ ...action.payload, quantity: 1 });
-                    state.pizzaIngredients.push({...action.payload, quantity: 1})
-                }
+              added.quantity -= 1;
             }
-        },
-        sansIngredients: (state, action) => {
-            const index = state.pizzaIngredients.findIndex(el => el.name === action.payload.name);
-            const isInitial = state.pizzaIngredientsInital.find(el => el.name === action.payload.name);
+          }
+        } else {
+          // Custom → décrémenter normalement
+          state.totalPrice -= Number(ing.price);
+          state.basePrice -= Number(ing.price);
 
-            if (index !== -1) {
-                const current = state.pizzaIngredients[index];
-            
-                // Si ce n'était pas un ingrédient initial
-                if (!isInitial) {
-                    // Supprimer de la pizza
-                    state.pizzaIngredients = state.pizzaIngredients.filter(el => el.name !== action.payload.name);
-                
-                    // Supprimer des ajouts
-                    state.addedIngredients = state.addedIngredients.filter(el => el.name !== action.payload.name);
-                
-                    // Remettre dans les ingrédients supp si pas déjà présent
-                    if (!state.suppIngredients.find(el => el.name === action.payload.name)) {
-                        state.suppIngredients.push({ ...action.payload });
-                    }
-                
-                    return; // On sort ici, rien à décrémenter
-                }
-            
-                // Si ingrédient initial
-                if (current.quantity > 0) {
-                    current.quantity -= 1;
-                
-                    // Supprimer des ajouts s'il y était
-                    state.addedIngredients = state.addedIngredients.filter(el => el.name !== action.payload.name);
-                
-                    // Si quantité est maintenant à 0, on ajoute dans les "sans"
-                    if (current.quantity === 0) {
-                        const alreadyInDeleted = state.deletedIngredients.find(el => el.name === current.name);
-                        if (!alreadyInDeleted) {
-                            state.deletedIngredients.push({ ...current });
-                        }
-                    }
-                }
-            }
-        },
-        supprimerIngredients: (state, action) => {
-            state.addedIngredients = state.addedIngredients.filter(
-                item => item.name !== action.payload.name
-            )
-        },
-        resetIngredients: (state,) => {
-            state.pizzaIngredients = []
-            state.addedIngredients = []
-            state.suppIngredients = []
+          const custom = state.customIngredients.find(
+            (i) => i.name === ing.name
+          );
+          if (custom) custom.quantity = existing.quantity;
+
+          const added = state.addedIngredients.find(
+            (i) => i.name === ing.name
+          );
+          if (added) added.quantity = existing.quantity;
+        }
+      } else {
+        // Quantité va passer à 0
+        if (isBase) {
+          existing.quantity = 0;
+
+          if (
+            !state.removedIngredients.find((i) => i.name === ing.name)
+          ) {
+            state.removedIngredients.push({ ...ing });
+          }
+
+          state.addedIngredients = state.addedIngredients.filter(
+            (i) => i.name !== ing.name
+          );
+        } else {
+          // Custom → on retire totalement
+          state.totalPrice -= Number(ing.price);
+          state.basePrice -= Number(ing.price);
+          state.baseIngredients = state.baseIngredients.filter(
+            (i) => i.name !== ing.name
+          );
+          state.customIngredients = state.customIngredients.filter(
+            (i) => i.name !== ing.name
+          );
+          state.addedIngredients = state.addedIngredients.filter(
+            (i) => i.name !== ing.name
+          );
+        }
+      }
+    },
+
+    confirmPizza: (state) => {
+      const newPizza = {
+        id: Date.now(),
+        ...state.selectedPizza,
+        ingredients: [...state.baseIngredients],
+        added: [...state.addedIngredients],
+        removed: [...state.removedIngredients],
+        custom: [...state.customIngredients],
+        basePrice : state.basePrice,
+        totalPrice: state.totalPrice,
+        quantity: 1,
+      };
+
+      if (state.editingPizzaIndex !== null) {
+        state.cart[state.editingPizzaIndex] = newPizza;
+      } else {
+        state.cart.push(newPizza);
+      }
+
+      // Reset
+      state.selectedPizza = null;
+      state.baseIngredients = [];
+      state.addedIngredients = [];
+      state.removedIngredients = [];
+      state.customIngredients = [];
+      state.totalPrice = 0;
+      state.editingPizzaIndex = null;
+    },
+
+    loadPizzaForEdit: (state, action) => {
+      const { pizza, index } = action.payload;
+
+      state.selectedPizza = pizza;
+      state.editingPizzaIndex = index;
+      state.baseIngredients = pizza.ingredients.map((i) => ({ ...i }));
+      state.addedIngredients = pizza.added ?? [];
+      state.removedIngredients = pizza.removed ?? [];
+      state.customIngredients = pizza.custom ?? [];
+      state.totalPrice = pizza.totalPrice;
+    },
+
+    cancelEdit: (state) => {
+      state.selectedPizza = null;
+      state.baseIngredients = [];
+      state.addedIngredients = [];
+      state.removedIngredients = [];
+      state.customIngredients = [];
+      state.totalPrice = 0;
+      state.editingPizzaIndex = null;
+    },
+
+    clearCart: (state) => {
+      state.cart = [];
+    },
+    deletePizza: (state, action) => {
+        state.cart = state.cart.filter(pizza => pizza.id !== action.payload)
+    },
+    incrementer: (state, action) => {
+        const item = state.cart.find(p => p.id === action.payload)
+
+        if (item) {
+            item.quantity += 1
+            item.totalPrice = item.totalPrice + item.basePrice
         }
     },
-})
+    decrementer: (state, action) => {
+        const item = state.cart.find(p => p.id === action.payload)
 
-export const {setIngredientsInital , setPizzaIngredients, ajouterIngredients, supprimerIngredients, resetIngredients, sansIngredients , setSuppIngredients} = IngredientsSlice.actions
-export default IngredientsSlice.reducer
+        if ( item && item.quantity == 1) {
+            state.cart = state.cart.filter(pizza => pizza.id !== action.payload)
+        }
+        else {
+            item.quantity -= 1
+            item.totalPrice = item.totalPrice - item.basePrice
+        }
+    }
+  },
+});
+
+export const {
+  selectPizza,
+  setSuppIngredients,
+  addIngredient,
+  removeIngredient,
+  confirmPizza,
+  loadPizzaForEdit,
+  cancelEdit,
+  clearCart,
+  deletePizza,
+  incrementer,
+  decrementer
+} = IngredientsSlice.actions;
+
+export default IngredientsSlice.reducer;

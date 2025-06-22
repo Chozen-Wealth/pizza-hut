@@ -2,20 +2,18 @@ import './Panier.css'
 import moto from "../../assets/livraison.png"
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { resetPanier } from '../../Slices/PanierSlice'
+import { deletePizza, loadPizzaForEdit, incrementer, decrementer, clearCart } from '../../Slices/IngredientsSlice'
 
 export default function Panier({show}) {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const panier = useSelector(state => state.panier)
-
-    const ingredientsPizza = useSelector(state => state.ingredients)
+    const pizzas = useSelector(state => state.ingredients.cart)
 
     const livraison = 1.99
-    const prixTotal = panier.reduce((sum, pizza) => sum + pizza.price, 0) + (ingredientsPizza.addedIngredients.length * 2.2)
-    const prixTotalLivraison = prixTotal+ ( prixTotal + livraison >= 15 ? livraison : 0)
+    const prixTotal = pizzas.reduce((sum, pizza) => sum + pizza.totalPrice, 0)
+    const prixTotalLivraison = prixTotal + (prixTotal >= 15 ? livraison : 0)
 
     return(
         <div className='Panier'>
@@ -25,24 +23,38 @@ export default function Panier({show}) {
                     <span className='btnAdresse'>Modifier l'adresse</span>
                 )}
                 <div className='PanierArticles'>
-                    {panier.length > 0 ? (
-                        panier.map(element => (
-                            <div className='panierArticle'>
-                                <div>
-                                    <span>{element.name}</span>
-                                    <span>€{(element.price + ingredientsPizza.addedIngredients.length * 2.2).toFixed(2).replace(".", ",")}</span>
+                    {pizzas.length > 0 ? (
+                        pizzas.map(element => (
+                            <div key={element.id} className='panierArticle'>
+                                <div style={{marginBottom: "5px"}}>
+                                    <span style={{fontSize: "14px", letterSpacing: "0.5px"}}>{element.name}</span>
+                                    <span>€{element.totalPrice.toFixed(2).replace(".", ",")}</span>
                                 </div>
-                                <div>
-                                    <div>
-                                        <span>-</span>
+
+                                <div style={{ fontSize: "0.9em", color: "#555", display:"flex", flexDirection: "column" }}>
+                                  {element.added.length > 0 && (
+                                    <p className='panierSupp'><span>Supp:</span> {element.added.map(i => `${i.name} x${i.quantity}`).join(", ")}</p>
+                                  )}
+                                  {element.removed.length > 0 && (
+                                    <p className='panierSans'><span>Sans:</span> {element.removed.map(i => i.name).join(", ")}</p>
+                                  )}
+                                </div>
+                                {show && (
+
+                                    <div style={{marginTop: "5px"}}>
+                                    <div className='divBtnArticle'>
+                                        <span onClick={()=> dispatch(decrementer(element.id))} className='btnArticle moins'>-</span>
                                         <span>{element.quantity}</span>
-                                        <span>+</span>
+                                        <span onClick={()=> dispatch(incrementer(element.id))} className='btnArticle'>+</span>
                                     </div>
                                     <div>
-                                        <span>Modifier</span>
-                                        <span style={{color: "#c8102e"}}>Supprimer</span>
+                                        <span onClick={() => {
+                                          dispatch(loadPizzaForEdit({ pizza: element, index: pizzas.findIndex(p => p.id === element.id) }));navigate(`/details/${element.name.toLowerCase().replace(" ", "-")}`);
+                                        }}>Modifier</span>
+                                        <span onClick={()=> dispatch(deletePizza(element.id))} style={{color: "#c8102e"}}>Supprimer</span>
                                     </div>
                                 </div>
+                                )}
                             </div>
                         ))
                     ): (
@@ -63,8 +75,8 @@ export default function Panier({show}) {
             </div>
             {show && (
                 <>
-                    <button className={`btnCommander ${prixTotalLivraison >= 15 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> {navigate("/confirmation");dispatch(resetPanier())}}>
-                        <div style={{flexGrow: "0"}}>{panier.length}</div>
+                    <button className={`btnCommander ${prixTotalLivraison >= 15 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> {navigate("/confirmation");dispatch(clearCart())}}>
+                        <div style={{flexGrow: "0"}}>{pizzas.length}</div>
                         <div style={{flexGrow: "1"}}>Commander</div>
                         <div style={{flexGrow: "0"}}>€{prixTotalLivraison.toFixed(2).replace(".", ",")}</div>
                     </button>

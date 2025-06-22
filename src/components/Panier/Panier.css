@@ -111,8 +111,8 @@
     line-height: 20px;
 }
 .panierArticle {
-    border-top: 1px dashed black;
-    border-bottom: 1px dashed black;
+    border-top: 1px dashed #b5b6bd;
+    border-bottom: 1px dashed #b5b6bd;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -139,4 +139,43 @@
 }
 .PanierArticles {
     padding-bottom: 30px;
+    padding-top: 10px;
+}
+.panierSupp {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+}
+.panierSans {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+}
+.panierSupp span {
+    color: #70a401;
+    
+}
+.panierSans span {
+    color: #c8102e;
+    
+}
+.divBtnArticle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btnArticle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btnArticle.moins {
+    padding-bottom: 4px;
 }
