@@ -75,7 +75,7 @@ export default function Panier({show}) {
             </div>
             {show && (
                 <>
-                    <button className={`btnCommander ${prixTotalLivraison >= 15 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> {navigate("/confirmation");dispatch(clearCart())}}>
+                    <button className={`btnCommander ${prixTotalLivraison >= 15 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> {navigate("/recapitulatif")}}>
                         <div style={{flexGrow: "0"}}>{pizzas.length}</div>
                         <div style={{flexGrow: "1"}}>Commander</div>
                         <div style={{flexGrow: "0"}}>€{prixTotalLivraison.toFixed(2).replace(".", ",")}</div>

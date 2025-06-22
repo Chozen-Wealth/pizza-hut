@@ -1,13 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Coiny&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Forum&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@300&family=Lexend:wght@518&family=Metal+Mania&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@215&family=Pixelify+Sans:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Tenor+Sans&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 .confirmation img{
-    height: 80px;
+    height: 100px;
+    animation: imgFlip 1s ease forwards;
+}
+@keyframes imgFlip {
+    0% {
+        opacity: 0;
+        transform: scale(0%) rotateY(0deg);
+    }
+    50% {
+        filter: drop-shadow(0px 0px 0px rgba(0, 202, 0, 0.4));
+    }
+    100% {
+        opacity: 1;
+        transform: scale(100%) rotateY(720deg);
+        filter: drop-shadow(0px 0px 20px rgba(0, 202, 0, 0.5));
+    }
 }
 .confirmation{
     border-radius: 8px;
     margin-top: 80px;
     margin-bottom: 80px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
     width: 400px;
     height: 500px;
     display: flex;
@@ -36,10 +51,16 @@
 .confirmation div h5{
     font-family: montserrat;
     font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+    margin-top: 15px;
 }
 .confirmation div p{
     font-family: montserrat;
     font-weight: bolder;
+    font-size: 30px;
+    margin: 0;
+    margin-top: 20px;
 }
 #div-confi-1{
     margin-bottom: 50px;

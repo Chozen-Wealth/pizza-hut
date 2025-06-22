@@ -1,0 +1,142 @@
+.Recap {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+.fiche {
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ficheDivPizzas {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.ficheDivPizzas > div > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.ficheDivPizzas > div > div:last-of-type {
+    display: flex;
+    flex-direction: column;
+}
+.ficheDivPizzas > div > div:last-of-type p {
+    margin: 0;
+    display: flex;
+    gap: 5px;
+}
+.ficheDivPizza {
+    border-bottom: 1px dashed gray;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.ficheDivPizza > div:first-of-type > span:first-of-type {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.ficheDivPromo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid gray;
+    padding: 30px;
+    padding-top: 0;
+    padding-bottom: 30px;
+    background-color: white;
+    position: relative;
+}
+.infosPromoDiv {
+    position: absolute;
+    left: -205px;
+    top: -25px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transform: scaleY(0%) scaleX(0%);
+    transform-origin: right;
+    transition: 0.2s;
+}
+.infosPromo {
+    position: absolute;
+    background-color: gray;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-style: normal;
+    left: 5px;
+    cursor: pointer;
+}
+.ficheDivPromo:has(.infosPromo:hover) .infosPromoDiv {
+    transform: scaleY(100%) scaleX(100%);
+} 
+.ficheDivPromo input {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: rgb(223, 223, 223);
+    border: none;
+    outline: none;
+}
+.ficheDivPromo button {
+    flex-grow: 0;
+    border: none;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+.ficheDivTotal {
+    background-color: white;
+    width: 100%;
+    color: gray;
+    padding: 15px;
+    padding-inline: 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 10px 10px;
+    margin-top: 15px;
+}
+.ficheDivTotal > div:last-of-type {
+    color: black;
+    margin-top: 10px;
+}
+.ficheDivTotal > div {
+    display: flex;
+    justify-content: space-between;
+}
+.ficheDivBtns {
+    width: 100%;
+}
+.ficheDivBtns button {
+    width: 100%;
+    border: none;
+    background-color: #70a401;
+    color: white;
+    font-size: 18px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.ficheDivBtns button:hover {
+    background-color: #547a00;
+}
+.ficheDivRetour {
+    width: 100%;
+}
