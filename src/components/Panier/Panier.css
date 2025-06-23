@@ -179,3 +179,16 @@
 .btnArticle.moins {
     padding-bottom: 4px;
 }
+
+@media (max-width:990px) {
+    .Panier {
+        display: none;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        background-color: white;
+        padding-top: 50px;
+    }
+}

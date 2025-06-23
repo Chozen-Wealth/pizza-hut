@@ -92,3 +92,15 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width:990px) {
+    .Card {
+        min-width: 200px;
+        max-width: 300px;
+    }
+}
+@media (max-width:669px) {
+    .Card {
+        width: 250px;
+    }
+}

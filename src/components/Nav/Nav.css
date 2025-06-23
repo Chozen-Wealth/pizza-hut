@@ -84,3 +84,29 @@ nav > div > div:first-of-type {
 nav > div > div:first-of-type img{
     height: 30px;
 }
+#menuBurger {
+    display: none;
+    fill: white;
+    height: 30px;
+    width: 30px;
+}
+
+@media (max-width:1024px) {
+    nav > div > ul {
+        display: none;
+    }
+    #menuBurger {
+        display: block;
+    }
+}
+@media (max-width:990px) {
+    nav {
+        position: static;
+        z-index: 99;
+    }
+}
+@media (max-width:540px) {
+    nav > div > div:last-of-type > button, nav > div > div:last-of-type > span {
+        display: none;
+    }
+}

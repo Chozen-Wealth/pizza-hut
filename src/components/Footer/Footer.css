@@ -1,3 +1,6 @@
+*{
+    border: 1px solid red;
+}
 Footer{
     background-color: rgb(35, 31, 32);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,10 +31,36 @@ Footer{
 }
 #col-2-p{
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     color: rgb(211, 223, 227);
+    width: 100%;
+    font-size: 14px;
 }
 #col-2-p2{
     display: flex;
     color: rgb(211, 223, 227);
+}
+
+
+@media (max-width:1136px) {
+    #col-2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    #col-2-d2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width:1100px) {
+    #col-1 {
+        flex-wrap: wrap;
+    }
+    #col-2-p {
+        justify-content: center;
+    }
 }
