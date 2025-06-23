@@ -99,9 +99,9 @@ export default function Details(){
                         </div>
                     </div>
                 </div>
-                {!cacherDetail && (
+                {/* {!cacherDetail && ( */}
                     <Panier show={false} />
-                )}
+                {/* )} */}
             </div>
         </section>
     )

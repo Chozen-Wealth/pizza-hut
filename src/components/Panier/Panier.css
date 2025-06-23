@@ -251,4 +251,7 @@
         justify-content: space-between;
         padding-bottom: 10px;
     }
+    .DetailsGeneral .responsiveBtnPanier {
+        display: none;
+    }
 }
