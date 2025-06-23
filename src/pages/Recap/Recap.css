@@ -158,11 +158,16 @@
         width: 100vw;
         top: 0;
         left: 0;
+        overflow-y: auto;
+        padding-top: 10px;
     }
     .ficheDivBtns {
         position: fixed;
         bottom: 0;
         width: 100%;
         padding: 10px;
+        background-color: whitesmoke;
+        margin-top: 0;
+        padding-top: 0;
     }
 }
