@@ -21,7 +21,7 @@ export default function Panier({show}) {
 
     return(
         <>
-            <div className={`responsiveBtnPanier ${prixTotalLivraison >= 15 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> setAfficherPanier(true)}>
+            <div className={`responsiveBtnPanier ${pizzas.length > 0 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> setAfficherPanier(true)}>
                 <button>
                     <div style={{flexGrow: "0"}}>{pizzas.length}</div>
                     <div style={{flexGrow: "1"}}>Afficher le panier d'achat</div>
