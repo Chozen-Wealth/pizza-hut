@@ -40,6 +40,10 @@
     .divPizzas {
         width: 100%;
     }
+    .Pizzas {
+        justify-content: center;
+        padding-inline: 10px;
+    }
 }
 @media (max-width:669px) {
     .Pizzas {

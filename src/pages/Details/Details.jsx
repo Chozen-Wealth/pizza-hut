@@ -24,6 +24,8 @@ export default function Details(){
 
     const [prix, setPrix] = useState(pizza.price)
 
+    const [cacherDetail, setCacherDetail] = useState(true)
+
     // const autreIngredients = allIngredients.filter(ingredient => !pizza.ingredients.some(pIngredient => pIngredient.name === ingredient.name))
     
     useEffect(()=>{
@@ -97,7 +99,9 @@ export default function Details(){
                         </div>
                     </div>
                 </div>
-                <Panier show={false} />
+                {!cacherDetail && (
+                    <Panier show={false} />
+                )}
             </div>
         </section>
     )

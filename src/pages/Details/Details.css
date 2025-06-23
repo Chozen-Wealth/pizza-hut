@@ -214,3 +214,31 @@
     opacity: 0.4;
     cursor: default !important;
 }
+@media (max-width:990px) {
+    .Details {
+        padding-inline: 2.5%;
+    }
+    .DetailsPizza {
+        width: 100%;
+    }
+    .DetailsGeneral {
+        display: block;
+    }
+}
+@media (max-width:780px) {
+    .DetailsPizza {
+        flex-direction: column;
+        height: auto;
+    }
+    .DetailsDivImage {
+        width: 100%;
+        height: 200px;
+    }
+    .DetailsDivImage img {
+        width: 100%;
+        object-fit: cover;
+    }
+    .DetailsDivInfos {
+        width: 100%;
+    }
+}

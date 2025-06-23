@@ -18,6 +18,7 @@ export default function Panier({show}) {
 
     const [afficherPanier, setAfficherPanier] = useState(false)
 
+
     return(
         <>
             <div className={`responsiveBtnPanier ${prixTotalLivraison >= 15 ? "active" : ""}`} disabled={!(prixTotalLivraison >= 15)} onClick={()=> setAfficherPanier(true)}>
