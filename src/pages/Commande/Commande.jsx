@@ -1,10 +1,11 @@
 import "./Commande.css"
 import confirmé from "../../assets/confirmé.png"
+import { useNavigate } from "react-router-dom"
 
 
 export default function Commande(){
 
-
+    const navigate = useNavigate()
 
     return(
         <section className="commande">
@@ -16,7 +17,7 @@ export default function Commande(){
                     <h5 id="blue">Voir la facture</h5>
                 </div>
                 <div>
-                    <button>Voir ma commande</button>
+                    <button onClick={()=> navigate("/")} className="btnretouraccueil">Retourner à l'accueil</button>
                 </div>
             </div>
         </section>
