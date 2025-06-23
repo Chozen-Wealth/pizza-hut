@@ -150,3 +150,19 @@
         width: 95%;
     }
 }
+@media (max-width:425px) {
+    .Recap {
+        position: fixed;
+        background-color: whitesmoke;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+    }
+    .ficheDivBtns {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+    }
+}

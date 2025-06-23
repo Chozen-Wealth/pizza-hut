@@ -256,4 +256,8 @@
     .DetailsGeneral .responsiveBtnPanier {
         display: none;
     }
+    .Panier2 .PanierArticles {
+        overflow-y: auto;
+        height: 60vh;
+    }
 }
