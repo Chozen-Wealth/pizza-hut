@@ -260,4 +260,10 @@
         overflow-y: auto;
         height: 60vh;
     }
+    .Panier2 .btnCommander {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: calc(100vw - 20px);
+    }
 }
