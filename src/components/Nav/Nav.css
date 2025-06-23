@@ -91,6 +91,11 @@ nav > div > div:first-of-type img{
     width: 30px;
 }
 
+@media (max-width:1200px) {
+    nav {
+        padding-inline: 10px;
+    }
+}
 @media (max-width:1024px) {
     nav > div > ul {
         display: none;
