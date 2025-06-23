@@ -72,3 +72,6 @@
 .commande button:hover{
     background-color: rgb(190, 167, 99);
 }
+@media (max-width:375px) {
+    
+}

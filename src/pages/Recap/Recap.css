@@ -5,7 +5,7 @@
 .fiche {
     margin-right: auto;
     margin-left: auto;
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -139,4 +139,14 @@
 }
 .ficheDivRetour {
     width: 100%;
+}
+@media (max-width:1200px) {
+    .fiche {
+        width: 80%;
+    }
+}
+@media (max-width:550px) {
+    .fiche {
+        width: 95%;
+    }
 }
