@@ -54,8 +54,6 @@ export default function Panier({show}) {
                                         <p className='panierSans'><span>Sans:</span> {element.removed.map(i => i.name).join(", ")}</p>
                                       )}
                                     </div>
-                                    {show && (
-
                                         <div style={{marginTop: "5px"}}>
                                         <div className='divBtnArticle'>
                                             <span onClick={()=> dispatch(decrementer(element.id))} className='btnArticle moins'>-</span>
@@ -68,8 +66,7 @@ export default function Panier({show}) {
                                             }}>Modifier</span>
                                             <span onClick={()=> dispatch(deletePizza(element.id))} style={{color: "#c8102e"}}>Supprimer</span>
                                         </div>
-                                    </div>
-                                    )}
+                                    </div> 
                                 </div>
                             ))
                         ): (

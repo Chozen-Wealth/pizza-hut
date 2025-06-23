@@ -73,5 +73,10 @@
     background-color: rgb(190, 167, 99);
 }
 @media (max-width:375px) {
-    
+    .confirmation div p {
+        font-size: 24px;
+    }
+    .confirmation div h5 {
+        font-size: 16px;
+    }
 }

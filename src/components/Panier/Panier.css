@@ -199,7 +199,7 @@
     border: none;
 }
 .responsiveBtnPanier button div:first-of-type {
-    background-color: #99ba51;
+    background-color: rgba(99, 144, 3, .3);
     padding: 8px 10px;
     border-radius: 4px;
     /* height: 30px;
